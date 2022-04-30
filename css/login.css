@@ -1,0 +1,172 @@
+.contenedor {
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(30%);
+  margin: -1em;
+  border-top: 10px;
+  border-color: black;
+}
+
+.barraLateralLogin{
+  background-color: #1e3567;
+  height: 100vh;
+  float: left;
+  flex-direction: column;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barraLateralOpcionesAdmin{
+  background-color: #1e3567;
+  height: 100vh;
+  float: left;
+  flex-direction: column;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.barraLateralLogin2{
+  background-color: #fff;
+  height: 100vh;
+  float: right;
+  flex-direction: column;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorMenu{
+  background-color: #fff;
+  border-radius: 10px;
+  border-color: 20px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(20%);
+  margin: -1em;
+}
+
+.colorBlanco{
+  color: black;
+}
+
+.margenBotonIS{
+  margin-bottom: 30px;
+}
+
+.margenTituloIS{
+  margin-top: 30px;
+}
+
+.sombra{
+  box-shadow: inset 4px 1px 12px 0px #000000;
+}
+
+.sombraboton{
+  box-shadow: 0px 0px 4px 0px #000000;
+}
+
+.alinIzquierda{
+ text-align: left;	
+}
+
+.botonesAdmin{
+  margin-top: 10px;
+  width: 170px;
+  height: 30px;
+}
+
+.campos {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border:none;
+    border-bottom: 2px solid #1e3567;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+::placeholder {
+    color: gray;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease; 
+    text-indent: -100%;
+    opacity: 1;
+ }
+
+ .letraBlanca{
+  color:white;
+ }
+
+.textoBarraLateral{
+  color:white;
+  text-decoration:none;
+  text-align: left;
+}
+
+.elementosBarraLat{
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+.elementosBarraLatPE{
+  border-top: 2px solid #fff;
+}
+
+.elementosBarraLatSeleccionado{
+  background-color: #6980B3;
+  box-shadow: inset 0px 0px 4px 0px #000;
+}
+
+
+.btn-circle.btn-xl {
+    color: #000;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 35px;
+    font-size: 24px;
+}
+
+.logoBarraLateral{
+  width: 196px;
+}
+
+h6, h5{
+  text-align: center;
+}
+
+.ALaIzquierda{
+  text-align: left;
+}
+
+.AlCentro{
+  text-align: center;
+}
+
+.contenedorNormal{
+  background-color: #fff;
+  height: 100vh;
+  float: right;
+  flex-direction: column;
+  display:flex;
+  justify-content: center;
+  padding:  6em;
+}
