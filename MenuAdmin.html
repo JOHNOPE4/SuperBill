@@ -3,9 +3,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <title>
-            Menu
-        </title>
+        <title>Menu</title>
 
         <!-- Estas dos librerias son Boostrap-->
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
@@ -21,6 +19,7 @@
 
         <!-- Estas dos librerias sirven para el mensaje emergente de cerrar sesión -->
         <!-- Development version -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     </head>
 </html>
@@ -67,24 +66,46 @@
         </div>
 
     </div>
+    <div class="col-md-9 barraLateralLogin2 sombra">
+            <canvas id="myChart"></canvas>
+    </div>
 
-        <div>
-            <!--No tocar, esta función sirve para mostrar mensajitos emergentes (tooltip) 
+    <script>
+      const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
 
-            Para agregar mensajes emergentes incluir esto 
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+      };
 
-            data-bs-toggle="tooltip" title="Hoorayaaaaaaaaaaaaa!" data-bs-placement="bottom"
-
-            data-bs-placement es el lugar en donde se mostrará el mensaje
-
-            title es el mensaje que mostrará
-
-            -->
+      const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+    </script>
             <script>
-                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
-                })
-            </script>
-        </div>
+          const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+          );
+        </script> 
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
