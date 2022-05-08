@@ -29,21 +29,31 @@
         </div>
     </div>
     <div class="col-md-9 barraLateralLogin2 sombra">
+        
         <div class="col-md-5">
-            <h1 class="text-center colorBlanco margenTituloIS">
-                Inicio de Sesión
-            </h1>
+            <form class="needs-validation" novalidate onsubmit="IniciarSesion(event)">
+                <h1 class="text-center colorBlanco margenTituloIS">
+                    Inicio de Sesión
+                </h1>
+                <br>
+                    <input class="col md-5 campos" placeholder="Correo" type="email" required id="correo" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+                    <div class="invalid-feedback">
+                        <b>Ingresa un correo valido</b>
+                    </div>
+                </br>
+                <input class="campos" placeholder="Contraseña" id="validationCustom02"  type="password" required/>
+                    <div class="invalid-feedback">
+                        <b>Ingresa tu contraseña</b>
+                    </div>
+                </br>
+                <div class="col text-center">
+                    <button class="btn btn-outline sombraboton" type="submit">Iniciar Sesión</button>
+                </div>
+            </form>
             <br>
-                <input class="col md-5 campos" placeholder="Correo" type="text"/>
-            </br>
-            <input class="campos" placeholder="Contraseña" type="password"/>
-            </br>
-            <div class="col text-center">
-                <button class="btn btn-outline sombraboton" type="button">Iniciar Sesión</button>
-            </div>
-            <br>
-            
         </div>
+        
         <h6 style="text-align: center;">
                 <a href="">¿Olvido su contraseña?</a>
                 <br><br>
@@ -51,4 +61,36 @@
                 <a href="Registrar Empresa.html">¿Desea registrarse para facturar?</a>
              </h6>
     </div>
+
+    <!--Script para hace las validaciones-->
+    <script type="text/javascript">
+        (function () {
+          'use strict'
+
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation')
+
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+    </script>
+
+    <script type="text/javascript">
+        function IniciarSesion(evt) {
+
+                location.href = "MenuAdmin.html";
+                evt.preventDefault(); // Evitamos el submit en nuevos navegadores
+                return false; // Evitamos el submit viejos navegadores
+        }
+    </script>
 </body>
