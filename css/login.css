@@ -168,9 +168,15 @@ h6, h5{
   flex-direction: column;
   display:flex;
   justify-content: center;
-  padding:  6em;
+  padding:  4em;
 }
 
 h4:on{
   color: red;
 }
+
+.fondoC7CCD9{
+  background-color:#C7CCD9;
+}
+
+

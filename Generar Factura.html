@@ -1,102 +1,218 @@
-<html>
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <title>Generar Factura</title>
+
+        <!-- Estas dos librerias son Boostrap-->
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
+        <!-- Estas dos librerias son Boostrap-->
+        <!-- CSS only -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet"/>
+        <!-- JavaScript Bundle with Popper -->
+        <script crossorigin="anonymous" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+        </script>
+        <!-- Esta libreria es para iconos-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        </link>
+
+        <!-- Estas dos librerias sirven para el mensaje emergente de cerrar sesión -->
+        <!-- Development version -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     </head>
-   
-    <body>
-      <div class="cabecera">
-        <h1>Generar Factura</h1>
-        
-      </div> 
-      
-       
-          <h2>
-            Vendedor
-          </h2>
-            <input  type="text" placeholder="Nombre" width="800" />
-
-           <h2>
-             Cliente
-           </h2>
-            <input  type="text" placeholder="Nombre" width="800" />
-            <input  type="text" placeholder="Cedula o Nit" width="800" />
-
-            <h2>
-              N° de factura
-            </h2>
-            <label class="Numeros">0000000000</label>
-            <h2>
-              Fecha
-            </h2>
-            <label class="Numeros">0000-00-00</label>
-           
-            
-<table>
-           
-      <tr>
-    
-        <th>Cantidad</th>
-    
-        <th>Descripción</th>
-    
-        <th>Precio unitario</th>
-        <th>Precio total</th>
-    
-      </tr>
-      <tr>
-        <td>
-          
-        </td>
-        <td>
-          
-        </td>
-        <td>
-          
-        </td>
-        <td>
-          
-        </td>
-    
-      </tr>
-      <tr>
-        <td>
-          
-        </td>
-        <td>
-          
-        </td>
-
-        <td>
-        IVA 19%  
-        </td>
-
-        <td>
-          
-        </td>
-    
-      </tr>
-      <tr>
-        <td>
-          
-        </td>
-        <td>
-          
-        </td>
-        <td>
-          Total
-        </td>
-        <td>
-          
-        </td>
-    
-      </tr>
-    
-    </table> 
-    
-    <input type="button" value="Facturar"/>
-    </body>
 </html>
+<body>
+    <div class="col-md-3 barraLateralOpcionesAdmin letraBlanca">
+        <div class="container row">
+            <div align="center">
+                <a href=""><img src="img\logo_transparent.png" style="width: 110px; margin-top: -100px;"></a>
+            </div>
+            <div style="margin-top: 25px; margin-bottom: 25px;">
+                <h5>Juan Castro</h5>
+                <h6 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar datos personales">Administrador <i class="fa fa-cog" aria-hidden="true"></i></h6> 
+            </div>
+            <a class="textoBarraLateral">
+                <div class="col-md-12 col-xs-12 elementosBarraLat elementosBarraLatPE elementosBarraLatSeleccionado">
+                    Home
+                </div>
+            </a>
+            <a class="textoBarraLateral">
+                <div class="col-md-12 col-xs-12 elementosBarraLat ">
+                    Consultar facturas
+                </div>
+            </a>
+            <a class="textoBarraLateral">
+                <div class="col-md-12 col-xs-12 elementosBarraLat ">
+                    Generar informes de ventas
+                </div>
+            </a>
+            <a class="textoBarraLateral">
+                <div class="col-md-12 col-xs-12 elementosBarraLat ">
+                    Gestión de usuarios
+                </div>
+            </a>
+            <a class="textoBarraLateral">
+                <div class="col-md-12 col-xs-12 elementosBarraLat ">
+                    Proyección de ventas
+                </div>
+            </a>
+        </div>
+        <div style="position: absolute; bottom: 40px; height: 20px;">
+            <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar sesión" class="btn-circle btn-xl">
+                <i class="fa fa-sign-out"></i>
+            </button>
+        </div>
+    </div>
 
+    <div class="col-md-9 contenedorNormal sombra">
+        <h1 align="center">Generar Nueva Factura</h1>
+        <br>
 
+        <div class="row">
+            <div class="col-md-12">
+                <table class=" table table-borderless">
+                    <thead>
+                        <tr class="fondoC7CCD9">
+                            <th><h5 class="ALaIzquierda">Datos del Documento<h5></th>
+                            <th><h5 class="ALaIzquierda">Número de Factura<h5></th>
+                            <th><h5 class="ALaIzquierda">123124<h5></th>
+                            <th></th>
+                            <th><h5 class="ALaIzquierda">Código Único de Factura<h5></th>
+                            <th><pre>       </pre></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Fecha de Emisión</th>
+                            <td>Generica</td>
+                            <td></td><!--vacio-->
+                            <th>Fecha de Vencimiento</th>
+                            <td>00/00/0000</td>
+                        </tr>
+                        <tr>
+                            <th>Tipo de Operacion</th>
+                            <td >Generica</td>
+                            <td></td><!--vacio-->
+                            <th>prefijo</th>
+                            <td>FEB</td>
+                        </tr>
+                        <tr>
+                            <th>Tipo de Negociación</th>
+                            <td>Crédito</td>
+                            <td></td><!--vacio-->
+                            <th>Medio de Pago</th>
+                            <td>Efectivo</td>
+                        </tr>
+                        <tr>
+                            <th>Tipo de Entrega</th>
+                            <td></td>
+                        </tr>
+                       
+                        
+
+                        <tr class="fondoC7CCD9">
+                            <th><h5 class="ALaIzquierda">Datos del Adquiriente<h5></th>
+                            <th><h5 class="ALaIzquierda">Nit del Adquiriente<h5></th>
+                            <th><input class="campos" type="text" name="Adquiriente" style="background-color: C7CCD9;"></th>
+                            <th></th>
+                            <th><h5 class="ALaIzquierda">Razón Social:<h5></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>Tipo de Documento</th>
+                            <td>Cedula de Ciudadania</td>
+                            <td></td><!--vacio-->
+                            <th>Direccion</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr>
+                            <th>Numero de Documento</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                            <th>Departamento</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr>
+                            <th>Nombre Comercial</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                            <th>Municipio</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr>
+                            <th>Tipo de Contribuyente</th>
+                            <td>Persona Juridica</td>
+                            <td></td><!--vacio-->
+                            <th>Correo</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr>
+                            <th></th><!--vacio-->
+                            <td></td><!--vacio-->
+                            <td></td><!--vacio-->
+                            <th>Telefono</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr class="fondoC7CCD9">
+                            <th><h5 class="ALaIzquierda">Detalles de Producto<h5></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                     </tbody>
+                </table>    
+            </div>
+        </div>
+
+        <div class="row col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="8"></th>
+                        <th scope="col" colspan="3">Impuestos</th>
+                        <th rowspan="2">Valor</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">U/M</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio Unitario</th>
+                        <th scope="col">Descuento</th>
+                        <th scope="col">Recargo</th>
+                        <th scope="col">IVA</th>
+                        <th scope="col">INC</th>
+                        <th scope="col">Bolsa</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th><!--#-->
+                        <td>67000</td><!--Codigo-->
+                        <td>Servicios especiales de transporte</td><!--Descripcion-->
+                        <td>day</td><!--U/M-->
+                        <td></td><!--Cantidad-->
+                        <td></td><!--Precio Unitario-->
+                        <td></td><!--Descuento-->
+                        <td></td><!--Recargo-->
+                        <td></td><!--IVA-->
+                        <td></td><!--INC-->
+                        <td></td><!--Bolsa-->
+                        <td></td><!--Valor-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
