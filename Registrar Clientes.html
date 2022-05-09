@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="icon" type="image/x-icon" href="img/logo_transparent.png">
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
@@ -18,12 +19,13 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <link rel="canonical" href="https://codepen.io/difros/pen/zYxJRyM">
-        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
         <!-- Esta libreria es para iconos-->
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         </link>
+
+        <!-- Estas dos librerias sirven para el mensaje emergente de cerrar sesión -->
+        <!-- Development version -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
       <div class="col-md-3 barraLateralLogin letraBlanca">
@@ -41,23 +43,23 @@
       <div class="col-md-9 barraLateralLogin2 sombra">
         <div class="container">
           <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              
-              <h4 id="btn_persona" on="tap:div_persona.show,div_empresa.hide" class=" AlCentro" type="button">Registrar persona</h4>
-              <hr height="2px;">
+            <div class="col-md-2">
+              <div align="center">
+                <a href="Login.html">
+                  <button data-bs-toggle="tooltip" title="Volver atrás" data-bs-placement="top" class="btn-circle btn-xl">
+                    <i class="fa fa-arrow-left"></i>
+                  </button>
+                </a>  
+              </div>
             </div>
-            <div class="col-md-4">
-              
-              <h4 id="btn_empresa" on="tap:div_empresa.show,div_persona.hide" class=" AlCentro" type="button">Registrar empresa</h4>
+            <div class="col-md-8">
+              <h3 class="ALaIzquierda">Registro como persona natural</h3>
               <hr height="2px;">
             </div>
             <div class="col-md-2"></div>
           </div>
           <br>
         </div>
-
-
         <div id="div_persona"class="container" >
           <div class="row">
             <div class="col-md-2"></div>
@@ -74,22 +76,31 @@
           <br>
           <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-5">
-              <b>Identificación</b>
-              <input class="col md-2 campos" type="text"/>
+            <div class="col-md-4">
+              <br>
+              <select class="campos" style="text-align: left;">
+                <option style="text-align: center;" selected disabled>Tipo de Identificación  ▼</option>
+                <option>TI - Tarjeta de identidad</option>
+                <option>CC - Cedula de ciudadanía</option>
+                <option>CE - Carnet de Extranjería</option>
+                <option>PA - Pasaporte</option>
+                <option>CD - Carnet Diplomático</option>
+              </select>
             </div>
-            <div class="col-md-3">
-                  <br>
-                  <select class="campos">
-                      <option style="text-align: center;">Tipo de Identificación  ▼</option>
-                      <option style="text-align: center;">TI</option>
-                      <option style="text-align: center;">CC</option>
-                      <option style="text-align: center;">CE</option>
-                      <option style="text-align: center;">PA</option>
-                      <option style="text-align: center;">CD</option>
-                  </select>
-                  <div class="col-md-2"></div>
-              </div>
+            <div class="col-md-4">
+              <b>Identificación</b>
+              <input class="col md-5 campos" type="text"/>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <b>Correo</b>
+              <input class="col md-5 campos" type="text"/>
+            </div>
+            <div class="col-md-2"></div>
           </div>
           <br><br>
           <div class="row">
@@ -111,21 +122,12 @@
           <br>
           <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <b>Correo</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-2"></div>
             <div class="col-md-4">
               <b>Dirección</b>
               <input class="col md-5 campos" type="text"/>
             </div>
             <div class="col-md-4">
-              <b>Telefono Celular</b>
+              <b>Telefono celular</b>
               <input class="col md-5 campos" type="text"/>
             </div>
             <div class="col-md-2"></div>
@@ -134,98 +136,19 @@
           <div class="row text-center">
             <div class="col-md-2"></div>
             <div class="col-md-8">
+              <!-- Danny luego de haber validado este formulario debe redireccionarlo a Registrar Clientes 2-->
               <button class="btn sombraboton" type="button">Siguiente paso</button>
             </div>
             <div class="col-md-2"></div>
           </div><!--persona-->
         </div>
 
-        <div id="div_empresa" class="container" hidden> <!--empresa-->
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <b>Nombre</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-4">
-              <b>Razón Social</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <b>NIT</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br><br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <select class="campos">
-                <option style="text-align: center;">Seleccione un departamento  ▼</option>
-                <option style="text-align: center;">Cundinamarca</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <select class="campos">
-                <option style="text-align: center;">Seleccione un municipio  ▼</option>
-                <option style="text-align: center;">Bogotá D.C</option>
-              </select>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <b>Correo</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <b>Dirección</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-4">
-              <b>Telefono Celular</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row text-center">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <button class="btn sombraboton" type="button">Siguiente paso</button>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-        </div>
-
       </div>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
     </body>
 </html>
-
-<!--
-
-  Ejemplo de Select con formato adecuado
-  <select class="campos">
-    <option style="text-align: center;">Seleccione una opción  ▼</option>
-    <option style="text-align: center;">Sociedad Limitada</option>
-    <option style="text-align: center;">Sociedad Anónima</option>
-    <option style="text-align: center;">Sociedad Anónima</option>
-    <option style="text-align: center;">Sociedad Colectiva</option>
-    <option style="text-align: center;">Empresa Asociativa de Trabajo</option>
-    <option style="text-align: center;">Sociedad por Acciones Simplificada S.A.S.</option>
-  </select>
--->
-
