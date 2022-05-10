@@ -34,9 +34,18 @@
         </div>
       </div>
       <div class="col-md-9 barraLateralLogin2 sombra">
-        <div class="container">      
+        <div class="container">  
+          <!--Titulo-->
           <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div align="center">
+                  <a href="Login.html">
+                    <button data-bs-toggle="tooltip" title="Volver atrás" data-bs-placement="top" class="btn-circle btn-xl">
+                      <i class="fa fa-arrow-left"></i>
+                    </button>
+                  </a>  
+                </div>
+              </div>
             <div class="col-md-8">
               <h3 class="ALaIzquierda">Registro como empresa</h3>
               <hr height="2px;">
@@ -44,63 +53,105 @@
             <div class="col-md-2"></div>
           </div>
           <br>
+          <form id="registrar"class="needs-validation" novalidate onsubmit="SegundaParteRegistrar(event)">
+          <!--Nombre Razon Social-->
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-4">
-              <b>Nombre Empresa</b>
-              <input class="col md-5 campos" type="text"/>
+              <b>Nombre Empresa*</b>
+              <input class="col md-5 campos SoloLetrasMinMaysEspacios" maxlength="30" type="text" required/>
+              <div class="invalid-feedback">
+                  <b>Este campo es obligatorio</b>
+              </div>
             </div>
             <div class="col-md-4">
-              <b>Razón Social</b>
-              <input class="col md-5 campos" type="text"/>
+              <b>Razón Social*</b>
+              <input class="col md-5 campos SoloLetrasMinMaysEspacios" maxlength="30" type="text" required/>
+              <div class="invalid-feedback">
+                <b>Este campo es obligatorio</b>
+              </div>
             </div>
             <div class="col-md-2"></div>
           </div>
+
           <br>
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
               <b>NIT</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br><br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <select class="campos">
-                <option style="text-align: center;" selected disabled>Seleccione un departamento  ▼</option>
-                <option style="text-align: center;">Cundinamarca</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <select class="campos">
-                <option style="text-align: center;" selected disabled>Seleccione un municipio  ▼</option>
-                <option style="text-align: center;">Bogotá D.C</option>
-              </select>
+              <input class="col md-5 campos SoloNumeros" type="text" maxlength="9" required/>
+              <div class="invalid-feedback">
+                <b>Este campo es obligatorio</b>
+              </div>
             </div>
             <div class="col-md-2"></div>
           </div>
           <br>
+          <!--Departamento y Municipio-->
           <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-4">
+              <br>
+              <select class="campos" id="Dep">
+                <option style="text-align: center;" value="PorSeleccionar" selected disabled>Seleccione un departamento  ▼</option>
+                <option>Amazonas</option>
+                <option>Antioquia</option>
+                <option>Arauca</option>
+                <option>Atlántico</option>
+                <option>Bolívar</option>
+                <option>Boyacá</option>
+                <option>Caldas</option>
+                <option>Caquetá</option>
+                <option>Casanare</option>
+                <option>Cauca</option>
+                <option>Cesar</option>
+                <option>Chocó</option>
+                <option>Córdoba</option>
+                <option>Cundinamarca</option>
+                <option>Guainía</option>
+                <option>Guaviare</option>
+                <option>Huila</option>
+                <option>La Guajira</option>
+                <option>Magdalena</option>
+                <option>Meta</option>
+                <option>Nariño</option>
+                <option>Norte de Santander</option>
+                <option>Putumayo</option>
+                <option>Quindío</option>
+                <option>Risaralda</option>
+                <option>San Andrés y Providencia</option>
+                <option>Santander</option>
+                <option>Sucre</option>
+                <option>Tolima</option>
+                <option>Valle del Cauca</option>
+                <option>Vaupés</option>
+                <option>Vichada</option>
+              </select>
+              <div>
+                  <b hidden="false" id="valDep" style="font-size: .875em; color: #dc3545;">Seleccione un departamento</b>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <b>Municipio*</b>
+              <input class="col md-5 campos SoloLetrasMinMaysEspacios" maxlength="30" type="text" required/>
+              <div class="invalid-feedback">
+                  <b>Este campo es obligatorio</b>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <br>
+          <br>
+
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
               <b>Dirección</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <b>Correo</b>
               <input class="col md-5 campos" type="text"/>
             </div>
             <div class="col-md-4">
               <b>Telefono celular</b>
-              <input class="col md-5 campos" type="text"/>
+              <input class="col md-5 campos SoloNumeros" type="text" maxlength="10"/>
             </div>
             <div class="col-md-2"></div>
           </div>
@@ -108,12 +159,67 @@
           <div class="row text-center">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-              <button class="btn sombraboton" type="button">Siguiente paso</button>
+              <button class="btn sombraboton" type="submit">Siguiente paso</button>
             </div>
             <div class="col-md-2"></div>
           </div>
+          </form>
         </div>
       </div>
+    <!--Script para hace las validaciones-->
+    <script type="text/javascript">
+        (function () {
+          'use strict'
+
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation')
+
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+
+
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+                //Validación del campo Departamento
+                if (document.getElementById("Dep").value == "PorSeleccionar") {
+                  document.getElementById("valDep").removeAttribute("hidden");
+                }else{
+                  document.getElementById("valDep").setAttribute("hidden", "false");
+                }
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+    </script>
+
+    <!--Validaciones de campos-->
+    <script type="text/javascript">
+      $('.SoloLetrasMinMaysEspacios').bind('keyup blur',function(){ 
+          var node = $(this);
+          node.val(node.val().replace(/[^a-zA-Z\u00C0-\u017F ]/g,'') ); }
+      );
+
+      $('.SoloNumeros').bind('keyup blur',function(){ 
+          var node = $(this);
+          node.val(node.val().replace(/[^0-9]/g,'') ); }
+      );
+    </script>
+
+    <!-- Redirección formulario -->
+    <script type="text/javascript">
+      function SegundaParteRegistrar(evt) {
+        if (document.getElementById("registrar").classList.contains("was-validated") == true) {
+            location.href = "Registrar Empresa 2.html";
+            evt.preventDefault(); // Evitamos el submit en nuevos navegadores
+            return false; // Evitamos el submit viejos navegadores      
+          }
+      }
+    </script>
+
     </body>
 </html>
 
