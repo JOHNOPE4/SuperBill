@@ -61,61 +61,84 @@
           <br>
         </div>
         <div id="div_persona"class="container" >
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <b>Nombre</b>
-              <input class="col md-5 campos" type="text"/>
+          <form class="nedes-validation" novalidate onsubmit="IniciarSesion(event)">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-4">
+                <b>Nombre*</b>
+                <input class="col md-5 campos SoloLetrasMinMaysEspacios" maxlength="30" type="text"/>
+              </div>
+              <div class="col-md-4">
+                <b>Apellido*</b>
+                <input class="col md-5 campos SoloLetrasMinMaysEspacios" maxlength="30" type="text"/>
+              </div>
+              <div class="col-md-2"></div>
             </div>
-            <div class="col-md-4">
-              <b>Apellido</b>
-              <input class="col md-5 campos" type="text"/>
+            <br>
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-4">
+                <br>
+                <select class="campos" style="text-align: left;">
+                  <option style="text-align: center;" selected disabled>Tipo de Identificación*  ▼</option>
+                  <option>TI - Tarjeta de identidad</option>
+                  <option>CC - Cedula de ciudadanía</option>
+                  <option>CE - Carnet de Extranjería</option>
+                  <option>PA - Pasaporte</option>
+                  <option>CD - Carnet Diplomático</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <b>Número de identificación*</b>
+                <input class="col md-5 campos SoloNumeros" type="text" minlength="7" maxlength="10" />
+              </div>
+              <div class="col-md-2"></div>
             </div>
-            <div class="col-md-2"></div>
-          </div>
+          </form>
           <br>
           <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-4">
               <br>
-              <select class="campos" style="text-align: left;">
-                <option style="text-align: center;" selected disabled>Tipo de Identificación  ▼</option>
-                <option>TI - Tarjeta de identidad</option>
-                <option>CC - Cedula de ciudadanía</option>
-                <option>CE - Carnet de Extranjería</option>
-                <option>PA - Pasaporte</option>
-                <option>CD - Carnet Diplomático</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <b>Identificación</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <b>Correo</b>
-              <input class="col md-5 campos" type="text"/>
-            </div>
-            <div class="col-md-2"></div>
-          </div>
-          <br><br>
-          <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
               <select class="campos">
-                <option style="text-align: center;">Seleccione un departamento  ▼</option>
-                <option style="text-align: center;">Cundinamarca</option>
+                <option style="text-align: center;" selected disabled>Seleccione un departamento  ▼</option>
+                <option>Amazonas</option>
+                <option>Antioquia</option>
+                <option>Arauca</option>
+                <option>Atlántico</option>
+                <option>Bolívar</option>
+                <option>Boyacá</option>
+                <option>Caldas</option>
+                <option>Caquetá</option>
+                <option>Casanare</option>
+                <option>Cauca</option>
+                <option>Cesar</option>
+                <option>Chocó</option>
+                <option>Córdoba</option>
+                <option>Cundinamarca</option>
+                <option>Guainía</option>
+                <option>Guaviare</option>
+                <option>Huila</option>
+                <option>La Guajira</option>
+                <option>Magdalena</option>
+                <option>Meta</option>
+                <option>Nariño</option>
+                <option>Norte de Santander</option>
+                <option>Putumayo</option>
+                <option>Quindío</option>
+                <option>Risaralda</option>
+                <option>San Andrés y Providencia</option>
+                <option>Santander</option>
+                <option>Sucre</option>
+                <option>Tolima</option>
+                <option>Valle del Cauca</option>
+                <option>Vaupés</option>
+                <option>Vichada</option>
               </select>
             </div>
             <div class="col-md-4">
-              <select class="campos">
-                <option style="text-align: center;">Seleccione un municipio  ▼</option>
-                <option style="text-align: center;">Bogotá D.C</option>
-              </select>
+              <b>Municipio*</b>
+              <input class="col md-5 campos SoloLetrasMinMaysEspacios" maxlength="30" type="text"/>
             </div>
             <div class="col-md-2"></div>
           </div>
@@ -124,11 +147,11 @@
             <div class="col-md-2"></div>
             <div class="col-md-4">
               <b>Dirección</b>
-              <input class="col md-5 campos" type="text"/>
+              <input class="col md-5 campos" type="text" maxlength="60" />
             </div>
             <div class="col-md-4">
               <b>Telefono celular</b>
-              <input class="col md-5 campos" type="text"/>
+              <input class="col md-5 campos SoloNumeros" type="text" />
             </div>
             <div class="col-md-2"></div>
           </div>
@@ -149,6 +172,17 @@
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
         })
+    </script>
+    <script type="text/javascript">
+      $('.SoloLetrasMinMaysEspacios').bind('keyup blur',function(){ 
+          var node = $(this);
+          node.val(node.val().replace(/[^a-zA-Z\u00C0-\u017F ]/g,'') ); }
+      );
+
+      $('.SoloNumeros').bind('keyup blur',function(){ 
+          var node = $(this);
+          node.val(node.val().replace(/[^0-9]/g,'') ); }
+      );
     </script>
     </body>
 </html>
