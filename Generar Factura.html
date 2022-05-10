@@ -25,7 +25,7 @@
     </head>
 </html>
 <body>
-    <div class="col-md-3 barraLateralOpcionesAdmin letraBlanca">
+    <div class="col-md-3 barraLateralOpcionesAdmin letraBlanca position-fixed">
         <div class="container row">
             <div align="center">
                 <a href=""><img src="img\logo_transparent.png" style="width: 110px; margin-top: -100px;"></a>
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <div class="col-md-9 contenedorNormal sombra">
+    <div class="col-md-9 contenedorNormal2 sombra">
         <h1 align="center">Generar Nueva Factura</h1>
         <br>
 
@@ -78,10 +78,10 @@
                         <tr class="fondoC7CCD9">
                             <th><h5 class="ALaIzquierda">Datos del Documento<h5></th>
                             <th><h5 class="ALaIzquierda">Número de Factura<h5></th>
-                            <th><h5 class="ALaIzquierda">123124<h5></th>
+                            <th style="width: 13%"><h5 class="ALaIzquierda" >123124<h5></th>
+                            <th><h5 class="ALaIzquierda">Código Único de Factura: <h5></th>
                             <th></th>
-                            <th><h5 class="ALaIzquierda">Código Único de Factura<h5></th>
-                            <th><pre>       </pre></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -110,15 +110,63 @@
                             <th>Tipo de Entrega</th>
                             <td></td>
                         </tr>
-                       
+
+                        <!--DATOS DEL EMISOR-->
+                        <tr class="fondoC7CCD9">
+                            <th><h5 class="ALaIzquierda">Datos del Emisor<h5></th>
+                            <th><h5 class="ALaIzquierda">Nit del Emisor<h5></th>
+                            <th><h5 class="ALaIzquierda"><h5></th>
+                            <th></th>
+                            <th><h5 class="ALaIzquierda">Razón Social:<h5></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>Nombre Comercial</th>
+                            <td></td>
+                            <td></td> <!--vacio -->
+                            <th>Direccion</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Tipo de contribuyente</th>
+                            <td>Persona Natural</td>
+                            <td></td><!--vacio-->
+                            <th>Departamento</th>
+                            <td>Bogota D.C.</td>
+                        </tr>
+                        <tr>
+                            <th>Regimen Contable</th>
+                            <td>Regimen Ordinario</td>
+                            <td></td><!--vacio-->
+                            <th>Municipio</th>
+                            <td>Bogota D.C.</td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr>
+                            <th>Actividad Economica Principal</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                            <th>Correo</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                            <th>Telefono</th>
+                            <td></td>
+                            <td></td><!--vacio-->
+                        </tr>
                         
 
+                        <!--DATOS DEL ADQUIRIENTE-->
                         <tr class="fondoC7CCD9">
                             <th><h5 class="ALaIzquierda">Datos del Adquiriente<h5></th>
                             <th><h5 class="ALaIzquierda">Nit del Adquiriente<h5></th>
                             <th><input class="campos" type="text" name="Adquiriente" style="background-color: C7CCD9;"></th>
-                            <th></th>
                             <th><h5 class="ALaIzquierda">Razón Social:<h5></th>
+                            <th></th>
                             <th></th>
                         </tr>
                         <tr>
@@ -174,13 +222,14 @@
             </div>
         </div>
 
+
         <div class="row col-md-12">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th colspan="8"></th>
+                        <th colspan="7"></th>
                         <th scope="col" colspan="3">Impuestos</th>
-                        <th rowspan="2">Valor</th>
+                        <th rowspan="2" align="">Valor<br>de venta<br>por item</th>
                     </tr>
                     <tr>
                         <th scope="col">#</th>
@@ -190,10 +239,9 @@
                         <th scope="col">Cantidad</th>
                         <th scope="col">Precio Unitario</th>
                         <th scope="col">Descuento</th>
-                        <th scope="col">Recargo</th>
                         <th scope="col">IVA</th>
+                        <th scope="col">ICA</th>
                         <th scope="col">INC</th>
-                        <th scope="col">Bolsa</th>
                         
                     </tr>
                 </thead>
@@ -206,7 +254,6 @@
                         <td></td><!--Cantidad-->
                         <td></td><!--Precio Unitario-->
                         <td></td><!--Descuento-->
-                        <td></td><!--Recargo-->
                         <td></td><!--IVA-->
                         <td></td><!--INC-->
                         <td></td><!--Bolsa-->
@@ -215,5 +262,64 @@
                 </tbody>
             </table>
         </div>
+        <br>
+        
+        <div class="row">
+            <table> 
+                <tbody>
+                    <tr class="fondoC7CCD9">
+                        <th><h5 class="ALaIzquierda">Notas Finales<h5></th>
+                        <th style="width: 40.5%"><h5 class="ALaIzquierda">Datos Totales<h5></th>
+                    </tr>
+                </tbody>
+            </table> 
+        </div>   
+
+        <div class="row">
+            <div class="col-md-7">
+                
+            </div>
+            <div class="col-md-5">
+                <table class=" table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Moneda</td>
+                            <td style="width: 45%">COP</td><!--Totales-->
+                        </tr>
+                    </thead>
+                    <tbody>    
+                        <tr>
+                            <td>Subtotal Precio Unitario (=)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                        <tr>
+                            <td>Descuentos (-)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                        <tr>
+                            <td>Subtotal Base gravable (=)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                        <tr>
+                            <td>Total Impuestos(+)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                        <tr>
+                            <td>Total mas impuestos(=)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                        <tr>
+                            <td>Descuento Global(-)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                        <tr style="background-color: F1F2F6">
+                            <td>Valor Total de la Operación(=)</td>
+                            <td></td><!--Totales-->
+                        </tr>
+                     </tbody>
+                </table>    
+            </div>
+        </div>
+
     </div>
 </body>

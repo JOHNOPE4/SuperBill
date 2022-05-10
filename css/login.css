@@ -179,4 +179,13 @@ h4:on{
   background-color:#C7CCD9;
 }
 
-
+.contenedorNormal2{
+  background-color: #fff;
+  height: auto;
+  width: auto;
+  float: right;
+  flex-direction: column;
+  display:flex;
+  justify-content: center;
+  padding:  4em;
+}
