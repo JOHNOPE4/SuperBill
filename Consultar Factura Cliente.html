@@ -4,7 +4,7 @@
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <link rel="icon" type="image/x-icon" href="img/logo_transparent.png">
-        <title>Consultar Factura</title>
+        <title>Consultar Factura Cliente</title>
 
         <!-- Estas dos librerias son Boostrap-->
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
@@ -25,68 +25,53 @@
     </head>
 </html>
 <body>
-    <div class="col-md-3 barraLateralOpcionesAdmin letraBlanca position-fixed">
+    <div class="col-md-3 barraLateralOpcionesAdmin letraBlanca position-fixed"">
         <div class="container row">
             <div align="center">
                 <a href=""><img src="img\logo_transparent.png" style="width: 110px; margin-top: -100px;"></a>
             </div>
             <div style="margin-top: 25px; margin-bottom: 25px;">
-                <h5>Juan Castro</h5>
-                <h6 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar datos personales">Administrador <i class="fa fa-cog" aria-hidden="true"></i></h6> 
+                <h5>Mario Navarro</h5>
+                <h6 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar datos personales">Cliente <i class="fa fa-cog" aria-hidden="true"></i></h6> 
             </div>
-            <a class="textoBarraLateral" href="MenuAdmin.html">
+            <a class="textoBarraLateral" href="Menu User.html">
                 <div class="col-md-12 col-xs-12 elementosBarraLat elementosBarraLatPE">
-                    Home
+                    Mis Facturas
                 </div>
             </a>
-            <a class="textoBarraLateral">
-                <div class="col-md-12 col-xs-12 elementosBarraLat elementosBarraLatSeleccionado">
+            <a class="textoBarraLateral" href="Consultar Factura Cliente.html">
+                <div class="col-md-12 col-xs-12 elementosBarraLat elementosBarraLatPE">
                     Consultar facturas
-                </div>
-            </a>
-            <a class="textoBarraLateral" href="Informe Ventas.html">
-                <div class="col-md-12 col-xs-12 elementosBarraLat ">
-                    Generar informes de ventas
-                </div>
-            </a>
-            <a class="textoBarraLateral">
-                <div class="col-md-12 col-xs-12 elementosBarraLat ">
-                    Gestión de usuarios
-                </div>
-            </a>
-            <a class="textoBarraLateral">
-                <div class="col-md-12 col-xs-12 elementosBarraLat ">
-                    Proyección de ventas
                 </div>
             </a>
         </div>
         <div style="position: absolute; bottom: 40px; height: 20px;">
-            <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar sesión" class="btn-circle btn-xl">
-                <i class="fa fa-sign-out"></i>
-            </button>
+            <a href="Login.html">
+				<button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar sesión" class="btn-circle btn-xl">
+					<i class="fa fa-sign-out"></i>
+				</button>
+			</a>
         </div>
+
     </div>
 
     <div class="col-md-9 contenedorNormal2 sombra">
         <div class="row">
 
             <div class="col-md-12">
-                <h1 align="ALaIzquierda">Consultar Factura</h1>
+                <h3 align="ALaIzquierda">Consultar Factura</h3>
                 <hr>
                 <br>
 
-                <form id="registrar"class="needs-validation" novalidate>
-                    <div class="row">
-                        
-                        <div class="col-md-2"></div>
-                        <div class="col-md-7">
-                            <input class="campos col-md-12 SoloNumeros" type="number" placeholder="Número de factura">
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn sombraboton" type="submit">Filtrar</button> 
-                        </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-7">
+                        <input class="campos col-md-12" type="search" placeholder="Número de factura">
                     </div>
-                </form>
+                    <div class="col-md-2">
+                        <button class="btn sombraboton" type="button">Filtrar</button> 
+                    </div>
+                </div>
                 <br><br>
                 <div class="row">
                     <div class="col-md-12">
@@ -133,8 +118,8 @@
                                     <th><h5 class="ALaIzquierda">Datos del Emisor<h5></th>
                                     <th><h5 class="ALaIzquierda">Nit del Emisor<h5></th>
                                     <th><h5 class="ALaIzquierda"><h5></th>
-                                    <th></th>
                                     <th><h5 class="ALaIzquierda">Razón Social:<h5></th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                                 <tr>
@@ -181,7 +166,7 @@
                                 <tr class="fondoC7CCD9">
                                     <th><h5 class="ALaIzquierda">Datos del Adquiriente<h5></th>
                                     <th><h5 class="ALaIzquierda">Nit del Adquiriente<h5></th>
-                                    <th><input class="campos" type="text" name="Adquiriente" style="background-color: C7CCD9;"></th>
+                                    <th></th>
                                     <th><h5 class="ALaIzquierda">Razón Social:<h5></th>
                                     <th></th>
                                     <th></th>
@@ -343,43 +328,4 @@
         </div>
         
     </div>
-
-
-    <!--Script para hace las validaciones-->
-    <script type="text/javascript">
-        (function () {
-          'use strict'
-
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.querySelectorAll('.needs-validation')
-
-          // Loop over them and prevent submission
-          Array.prototype.slice.call(forms)
-
-
-            .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-              }, false)
-            })
-        })()
-    </script>
-
-    <script type="text/javascript">
-      $('.SoloLetrasMinMaysEspacios').bind('keyup blur',function(){ 
-          var node = $(this);
-          node.val(node.val().replace(/[^a-zA-Z\u00C0-\u017F ]/g,'') ); }
-      );
-
-      $('.SoloNumeros').bind('keyup blur',function(){ 
-          var node = $(this);
-          node.val(node.val().replace(/[^0-9]/g,'') ); }
-      );
-    </script>
 </body>
-

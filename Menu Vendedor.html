@@ -31,12 +31,17 @@
                 <a href=""><img src="img\logo_transparent.png" style="width: 110px; margin-top: -100px;"></a>
             </div>
             <div style="margin-top: 25px; margin-bottom: 25px;">
-                <h5>Juan Castro</h5>
-                <h6 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar datos personales">Administrador <i class="fa fa-cog" aria-hidden="true"></i></h6> 
+                <h5>Camilo Torres</h5>
+                <h6 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar datos personales">Vendedor <i class="fa fa-cog" aria-hidden="true"></i></h6> 
             </div>
-            <a class="textoBarraLateral" href="MenuAdmin.html">
+            <a class="textoBarraLateral" href="Menu Vendedor.html">
                 <div class="col-md-12 col-xs-12 elementosBarraLat elementosBarraLatPE elementosBarraLatSeleccionado">
                     Home
+                </div>
+            </a>
+            <a class="textoBarraLateral" href="Generar Factura.html">
+                <div class="col-md-12 col-xs-12 elementosBarraLat ">
+                    Generar Facturas
                 </div>
             </a>
             <a class="textoBarraLateral" href="Consultar Factura.html">
@@ -47,16 +52,6 @@
             <a class="textoBarraLateral" href="Informe Ventas.html">
                 <div class="col-md-12 col-xs-12 elementosBarraLat ">
                     Generar informes de ventas
-                </div>
-            </a>
-            <a class="textoBarraLateral">
-                <div class="col-md-12 col-xs-12 elementosBarraLat ">
-                    Gestión de usuarios
-                </div>
-            </a>
-            <a class="textoBarraLateral">
-                <div class="col-md-12 col-xs-12 elementosBarraLat ">
-                    Proyección de ventas
                 </div>
             </a>
         </div>
@@ -74,23 +69,18 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <h3 style="text-align: center">Bienvenido Juan Castro</h3>
+                    <h3 style="text-align: center">Bienvenido Camilo Torres</h3>
                     <hr>
-                    <h4 style="text-align: left;">Aquí tienes algunas estadisticas generales</h4>
-                    <br><br><br>
+                    <h4 style="text-align: left;">Este ha sido tu rendimiento en los ultimos 6 meses</h4><br><br>
                 </div>
                 <div class="col-md-1"></div>
             </div>
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-6">
-                    <h5>Ventas en los ultimos 6 meses</h5>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
                     <canvas id="Grafica1"></canvas>    
                 </div>
-                <div class="col-md-4">
-                    <h5>Ventas por empleados</h5>
-                    <canvas id="Grafica2"></canvas>
-                </div>
+                <div class="col-md-2"></div>
             </div>  
         </div>
     </div>
@@ -111,7 +101,7 @@
           label: 'Cifras en millones de COP',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          data: [28, 10, 5, 7, 20, 30, 45],
+          data: [4, 2, 3, 5, 4, 3, 6],
         }]
       };
 
@@ -122,36 +112,8 @@
       };
     </script>
     <script>
-        const data2 = {
-            labels: [
-            'Camilo Torres',
-            'Antonio Nariño',
-            'Francisco Santander'
-            ],
-            datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
-            backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)'
-            ],
-            hoverOffset: 4
-            }]
-        };
-
-        const config2 = {
-          type: 'pie',
-          data: data2,
-        };
-    </script>
-    <script>
           const myChart = new Chart(
             document.getElementById('Grafica1'),config1
-          );
-
-          const myChart2 = new Chart(
-            document.getElementById('Grafica2'),config2
           );
     </script> 
     <script>

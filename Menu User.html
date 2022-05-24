@@ -34,54 +34,105 @@
                 <h5>Mario Navarro</h5>
                 <h6 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar datos personales">Cliente <i class="fa fa-cog" aria-hidden="true"></i></h6> 
             </div>
-            <a class="textoBarraLateral">
+            <a class="textoBarraLateral" href="Menu User.html">
                 <div class="col-md-12 col-xs-12 elementosBarraLat elementosBarraLatPE elementosBarraLatSeleccionado">
-                    Home
+                    Mis Facturas
                 </div>
             </a>
-            <a class="textoBarraLateral">
+            <a class="textoBarraLateral" href="Consultar Factura Cliente.html">
                 <div class="col-md-12 col-xs-12 elementosBarraLat ">
                     Consultar facturas
                 </div>
             </a>
         </div>
         <div style="position: absolute; bottom: 40px; height: 20px;">
-            <button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar sesión" class="btn-circle btn-xl">
-                <i class="fa fa-sign-out"></i>
-            </button>
+			<a href="Login.html">
+				<button data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cerrar sesión" class="btn-circle btn-xl">
+					<i class="fa fa-sign-out"></i>
+				</button>
+			</a>
         </div>
 
     </div>
     <div class="col-md-9 barraLateralLogin2 sombra">
-            <canvas id="myChart"></canvas>
+		<div class="row col-md-9">
+			<h3 class="ALaIzquierda">Mis Facturas</h3>
+			<hr height="2px;">
+			<br><br>
+			<table class="table table-bordered">
+                        <thead>		
+                            <tr>
+                                <th scope="col" >#</th>
+                                <th scope="col">Vendedor</th>
+                                <th scope="col">Valor Factura</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Enrique Gonzales</td>
+                              <td>$5.090.000</td>
+                              <td>24/abr/2022</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Camila Camacho</td>
+                              <td>$3.090.000</td>
+                              <td>15/abr/2022</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Enrique Gonzales</td>
+                              <td>$1.090.000</td>
+                              <td>10/abr/2022</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Camila Camacho</td>
+                              <td>$7.340.000</td>
+                              <td>1/abr/2022</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Daniela Beltran</td>
+                              <td>$10.090.000</td>
+                              <td>1/abr/2022</td>
+                            </tr>
+							<tr>
+                              <th scope="row">6</th>
+                              <td>Camila Camacho</td>
+                              <td>$15.450.000</td>
+                              <td>1/abr/2022</td>
+                            </tr>
+							<tr>
+                              <th scope="row">7</th>
+                              <td>Carlos Venegas</td>
+                              <td>$3.120.000</td>
+                              <td>1/abr/2022</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					<nav aria-label="...">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+		</div>
+        
     </div>
 
-    <script>
-      const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-      ];
 
-      const data = {
-        labels: labels,
-        datasets: [{
-          label: 'My First dataset',
-          backgroundColor: 'rgb(99, 156, 255)',
-          borderColor: 'rgb(99, 156, 255)',
-          data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-      };
-
-      const config = {
-        type: 'line',
-        data: data,
-        options: {}
-      };
-    </script>
             <script>
           const myChart = new Chart(
             document.getElementById('myChart'),
